@@ -66,7 +66,9 @@ class DataLoader:
                 pickle.dump(self.merged_data_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
                 self.logger.info("output pickle file to {}".format(pkl_data_path))
 
-    def load_merged_data_from_pkl(self, pkl_data_path):
+    def load_merged_data_from_pkl(self, pkl_data_path=None):
+        if pkl_data_path is None:
+            pkl_data_path = os.path.join(self.data_folder, "merged_data.pkl")
         with open(pkl_data_path, 'rb') as handle:
             self.merged_data_dict = pickle.load(handle)
             self.logger.info('Loading merged data')
@@ -75,7 +77,11 @@ class DataLoader:
 def main():
     data_folder_path = os.path.join(os.getcwd(), "industry-related-data")
     dataloader = DataLoader(data_folder=data_folder_path)
-    dataloader.merge_all_data()
+    # merge all csv files and export to a single pickle file
+    # dataloader.merge_all_data(export_data=True)
+    # load data from this single pickle file
+    dataloader.load_merged_data_from_pkl()
+
     print('Testing')
 
 
