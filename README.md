@@ -18,4 +18,6 @@ looking forward to giving my own answer :)
 
 ![0%](https://progress-bar.dev/0?title=OptimizeTradingStrategy)
 
+![0%](https://progress-bar.dev/0?title=Documentation)
+
 
