@@ -76,13 +76,8 @@ def main():
     data_folder_path = os.path.join(os.getcwd(), "industry-related-data")
     dataloader = DataLoader(data_folder=data_folder_path)
     dataloader.merge_all_data()
-
     print('Testing')
 
 
 if __name__ == "__main__":
     main()
-
-
-# load mappings data
-test = pd.read_csv('industry-related-data/sw_mappings.csv')
